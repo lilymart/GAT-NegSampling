@@ -1,7 +1,7 @@
 import torch
 
 """ Wrapper around heterogeneous encoder + edge decoder """
-class HeteroGATLinkPrediction(torch.nn.Module):
+class HeteroGATLinkPredictor(torch.nn.Module):
 
     def __init__(self, encoder, decoder, edge_type):
         super().__init__()
