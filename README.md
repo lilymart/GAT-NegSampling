@@ -41,8 +41,12 @@ data/
             └── metapaths_exact_v2/
 ```
 
-Node features and heterogeneous graph connectivity are stored as PyTorch tensors and assembled into a PyTorch Geometric *HeteroData* object. Edge-list filenames are expected to follow *sourceType_relationType_targetType.pt*. The *processed/* directory is used to cache automatically generated user-to-target interaction meta-paths. The root data directory is currently configured through *get_base_dir()* in *src/support/utils.py* and should be adapted to the local environment before running the experiments.
+Node features and heterogeneous graph connectivity are stored as PyTorch tensors and assembled into a PyTorch Geometric *HeteroData* object. Edge-list filenames are expected to follow *sourceType_relationType_targetType.pt*. The *processed/* directory is used to cache automatically generated user-to-target interaction meta-paths. The root data directory is currently configured through *get_base_dir()* in *src/support/utils.py* and should be adapted to the local environment before running the experiments. 
 
+To compile with [Twitter Developer Policy](https://developer.x.com/en/developer-terms/policy), Twitter datasets cannot be shared. 
+For the PolitiFact dataset, you can follow the instructions in [FakeNewsNet](https://github.com/KaiDMML/FakeNewsNet).
+For the MuMiN dataset, you can refer to [MuMiN](https://mumin-dataset.github.io/).
+ 
 
 ## Training and evaluation
 Multiple configurations can be executed through:
