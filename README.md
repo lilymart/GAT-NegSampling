@@ -41,7 +41,7 @@ data/
             └── metapaths_exact_v2/
 ```
 
-Node features and heterogeneous graph connectivity are stored as PyTorch tensors and assembled into a PyTorch Geometric *HeteroData* object. Edge-list filenames are expected to follow *sourceType_relationType_targetType.pt*. The *processed/* directory is used to cache automatically generated user-to-target interaction meta-paths. The root data directory is currently configured through 'get_base_dir()' in 'src/support/utils.py' and should be adapted to the local environment before running the experiments.
+Node features and heterogeneous graph connectivity are stored as PyTorch tensors and assembled into a PyTorch Geometric *HeteroData* object. Edge-list filenames are expected to follow *sourceType_relationType_targetType.pt*. The *processed/* directory is used to cache automatically generated user-to-target interaction meta-paths. The root data directory is currently configured through *get_base_dir()* in *src/support/utils.py* and should be adapted to the local environment before running the experiments.
 
 
 ## Training and evaluation
@@ -52,7 +52,7 @@ bash src/run_experiments.sh
 
 The main parameters are:
 - *dataset-name*: dataset to process (mumin or politifact).
-- *interaction-mode: target interaction relation. Use 'any' for the union of all discovered meta-paths or a '1-based meta-path ID' (1, 2, ...).
+- *interaction-mode: target interaction relation. Use *any* for the union of all discovered meta-paths or a *1-based meta-path ID* (1, 2, ...).
 - *seed*: random seed used for splitting, initialization, sampling, and training (default: 42).
 - *hidden-channels*: dimensionality of hidden node representations (default: 64).
 - *num-layers*: number of GATv2 layers (default: 3).
@@ -80,7 +80,7 @@ The implemented negative-sampling settings correspond to:
 - *dynamic* + *mixed_self_adversarial*: self-adversarial mixed sampling;
 - *dynamic* + *mixed_structure_aware*: structure-aware mixed sampling.
 
-    Note: A single experiment can be launched with, e.g., 'python src/main.py --dataset-name mumin --interaction-mode any --negative-mode dynamic --negative-strategy mixed --train-neg-ratio 1.0 --disjoint-train-ratio 0.2 --seed 42
+    Note: A single experiment can be launched with, e.g., *python src/main.py --dataset-name mumin --interaction-mode any --negative-mode dynamic --negative-strategy mixed --train-neg-ratio 1.0 --disjoint-train-ratio 0.2 --seed 42*.
 
 ## Results
 Experimental results are stored under:
@@ -90,7 +90,7 @@ data/
     └── results/
         └── link_prediction/
 ```
-Standard experiments are appended to 'all_runs.csv' while path-masked experiments are stored in 'all_runs_path_masked.csv'. The output includes the experimental configuration, predictive metrics, selected validation threshold, training time, number of trained epochs, and computational-cost measurements.
+Standard experiments are appended to *all_runs.csv* while path-masked experiments are stored in *all_runs_path_masked.csv*. The output includes the experimental configuration, predictive metrics, selected validation threshold, training time, number of trained epochs, and computational-cost measurements.
 Re-running the same experimental configuration and seed replaces the corresponding previous result.
 
 
