@@ -46,9 +46,9 @@ Node features and heterogeneous graph connectivity are stored as PyTorch tensors
 
 ## Training and evaluation
 Multiple configurations can be executed through:
-'''
+```
 bash src/run_experiments.sh
-'''
+```
 
 The main parameters are:
 - *dataset-name*: dataset to process (mumin or politifact).
@@ -80,14 +80,16 @@ The implemented negative-sampling settings correspond to:
 - *dynamic* + *mixed_self_adversarial*: self-adversarial mixed sampling;
 - *dynamic* + *mixed_structure_aware*: structure-aware mixed sampling.
 
+    Note: A single experiment can be launched with, e.g., 'python src/main.py --dataset-name mumin --interaction-mode any --negative-mode dynamic --negative-strategy mixed --train-neg-ratio 1.0 --disjoint-train-ratio 0.2 --seed 42
+
 ## Results
 Experimental results are stored under:
-'''
+```
 data/
 └── dataset_name/
     └── results/
         └── link_prediction/
-'''
+```
 Standard experiments are appended to 'all_runs.csv' while path-masked experiments are stored in 'all_runs_path_masked.csv'. The output includes the experimental configuration, predictive metrics, selected validation threshold, training time, number of trained epochs, and computational-cost measurements.
 Re-running the same experimental configuration and seed replaces the corresponding previous result.
 
