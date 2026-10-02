@@ -4,13 +4,13 @@ export PYTHONPATH=$PYTHONPATH:/projects/GNNLinkPrediction
 
 
 # experiment setting parameters
-dataset_names=("mumin") #"politifact"
-seeds=(96 132 123 2026) # 42
-interaction_modes=("1") #"any" "1" "2" "3" "4" "5"
-negative_modes=("dynamic") #"none" "static"
-negative_strategies=("mixed") #"random" "mixed" "mixed_self_adversarial" "mixed_structure_aware"
-train_neg_ratios=(1.0) #2.0 3.0 5.0
-disjoint_train_ratios=(0.2) #0.0 0.2 0.3
+dataset_names=("mumin" "politifact")
+seeds=(42 96 132 123 2026)
+interaction_modes=("any" "1" "2" "3" "4" "5")
+negative_modes=("none" "static" "dynamic")
+negative_strategies=("random" "mixed" "mixed_self_adversarial" "mixed_structure_aware"")
+train_neg_ratios=(1.0 2.0 3.0 5.0)
+disjoint_train_ratios=(0.0 0.2 0.3)
 
 
 for dataset_name in "${dataset_names[@]}"; do
